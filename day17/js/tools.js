@@ -41,6 +41,7 @@ function move(obj, attr, target, speed, callback) {
 		}
 
 		//将新值设置给box1
+		//用括号的原因是因为attr是一个变量，不然可以直接obj.style.left之类
 		obj.style[attr] = newValue + "px";
 
 		//当元素移动到0px时，使其停止执行动画
