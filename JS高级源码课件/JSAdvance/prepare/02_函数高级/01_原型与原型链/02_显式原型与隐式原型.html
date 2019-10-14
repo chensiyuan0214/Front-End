@@ -6,7 +6,7 @@
 </head>
 <body>
 <!--
-1. 每个函数function都有一个prototype，即显式原型
+1. 每个函数function都有一个prototype，即显式原型，函数对象在被定义的时候就创建了
 2. 每个实例对象都有一个__proto__，可称为隐式原型
 3. 对象的隐式原型的值为其对应构造函数的显式原型的值
 4. 内存结构(图)
@@ -16,16 +16,20 @@
   * 程序员能直接操作显式原型, 但不能直接操作隐式原型(ES6之前)
 -->
 <script type="text/javascript">
-  function Fn() {
+  function Fn() { //内部语句: this.prototype = {}
 
   }
-  var fn = new Fn()
+  var fn = new Fn() //内部语句： this.__proto__ = Fn.prototype
   console.log(Fn.prototype, fn.__proto__)
-  console.log(Fn.prototype===fn.__proto__)
+  console.log(Fn.prototype===fn.__proto__) // true;
 
+
+  //给原型添加方法
   Fn.prototype.test = function () {
     console.log('test()')
   }
+
+  //通过实例来调用方法
   fn.test()
 
 </script>
