@@ -7,7 +7,8 @@
 <body>
 <script type="text/javascript">
   /*
-  测试题1: 先预处理变量, 后预处理函数
+  测试题1: 先预处理变量, 后预处理函数。
+  先变量提升，再函数提升
   */
   function a() {}
   var a;
@@ -30,7 +31,7 @@
     console.log(c)
     var c = 3
   }
-  c(2)
+  c(2)  //报错
 
 </script>
 </body>

@@ -16,7 +16,7 @@
     * function声明的全局函数==>赋值(fun), 添加为window的方法
     * this==>赋值(window)
   * 开始执行全局代码
-3. 函数执行上下文
+3. 函数执行上下文，会在栈之中专门找出一块，存这个函数变量
   * 在调用函数, 准备执行函数体之前, 创建对应的函数执行上下文对象
   * 对局部数据进行预处理
     * 形参变量==>赋值(实参)==>添加为执行上下文的属性
@@ -29,7 +29,7 @@
 <script type="text/javascript">
 
   console.log(a1)
-  console.log(a2)
+  console.log('a2 = '+a2)
   console.log(a3)
   // console.log(a4)
   console.log(this)
@@ -42,6 +42,21 @@
     console.log('a3()')
   }
   a4 = 4
+  
+  function  fn2(a2) {
+      console.log(a1); // undefined
+      console.log(a2); // 2
+      console.log(a3); // a3()
+      console.log(this); // windows 因为是window call的method
+
+      var a1 = 3;
+      function a3() {
+          console.log('a3()');
+      }
+
+  }
+
+  fn2(2,3);
 
 
   function fn(x, y) {
