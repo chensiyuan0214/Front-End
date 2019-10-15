@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_原型链</title>
+</head>
+<body>
+<!--
+1. 原型链(图解)
+  * 访问一个对象的属性时，
+    * 先在自身属性中查找，找到返回
+    * 如果没有, 再沿着__proto__这条链向上查找, 找到返回
+    * 如果最终没找到, 返回undefined
+  * 别名: 隐式原型链
+  * 作用: 查找对象的属性(方法)
+2. 构造函数/原型/实体对象的关系(图解)
+3. 构造函数/原型/实体对象的关系2(图解)
+-->
+<script type="text/javascript">
+  console.log(Object);
+  //这里可以直接一上来就输出Object,
+  // 说明Object是一个全局变量，JavaScript已经帮我们设置好的一个函数对象，记住，是函数对象
+  // 而不是Object的原型对象
+
+  console.log(Object.prototype);
+  function Fn() {
+    this.test1 = function () {
+      console.log('test1()')
+    }
+  }
+  Fn.prototype.test2 = function () {
+    console.log('test2()')
+  }
+  var fn = new Fn()
+
+  fn.test1()
+  fn.test2()
+  console.log(fn.toString())
+  fn.test3()
+  console.log(Fn.prototype instanceof Object); //true
+  console.log(Object.prototype instanceof Object); //false
+  console.log(Function.prototype instanceof Object);// true
+
+  //所有函数都是Function的实例，包括他Function本身
+  console.log(Function.prototype === Function.__proto__); //true
+
+  //Object对象（不是实例）的原型对象是null，所以它也是原型链的尽头
+  console.log(Object.prototype.__proto__); //null
+</script>
+</body>
+</html>

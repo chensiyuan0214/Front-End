@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06.转换为Number</title>
+    <script type = "text/javascript">
+        /*
+        将其他数据类型转换为Number
+            方法一. 调用Number()
+         */
+
+        var a = "123"
+        a = Number(a);
+        console.log(typeof a);
+
+        /*
+        方法二.可以使用
+        parseInt()，
+        会讲整数部分转换为数字  "123px" -> 123
+        "a156px"->NaN
+        parseFloat()
+        "199.654pppx" ->199.654
+        "a123.99"->NaN
+        会将小数部分转换为数字
+
+        可以多递入一个参数，如 parseInt(a,8)来表示将a转换成8进制
+         */
+
+
+        /*
+        不同进制
+        16进制 0x开头
+        8进制 0开头
+        2进制 0b开头
+        但是不是所有的浏览器都支持
+         */
+    </script>
+</head>
+<body>
+
+</body>
+</html>
