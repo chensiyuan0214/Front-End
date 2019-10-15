@@ -55,7 +55,7 @@ node.js
 			- npm remove / r 包名 删除包
 			- npm install 包名 --save 安装包并添加到依赖中 *****
 			- npm install 下载当前项目所依赖的包
-			- npm install 包名 -g 全局安装包（全局安装的包一般都是一些工具）
+			- npm install 包名 -g 全局安装包（全局安装的包一般都是一些工具），一般都是工具，在计算机里用的，不是在项目里弄得，比如给项目打包的，或者给JS编译的工具
 			
 			
 			

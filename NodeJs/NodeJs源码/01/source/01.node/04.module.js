@@ -45,3 +45,4 @@ var a = 10;
 //console.log(module.exports == exports);
 
 console.log(__dirname);
+console.log(module);
