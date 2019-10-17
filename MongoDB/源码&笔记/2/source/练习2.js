@@ -1,8 +1,11 @@
 //18.查询numbers中num为500的文档
+//这种查法，只要num里面含有500就会符合条件
 db.numbers.find({num:500})
 
 //19.查询numbers中num大于5000的文档
 db.numbers.find({num:{$gt:500}});
+
+//这种查法，必须要一模一样才行
 db.numbers.find({num:{$eq:500}});
 
 //20.查询numbers中num小于30的文档
