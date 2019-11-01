@@ -22,6 +22,16 @@
 <script type="text/javascript" src="js/jquery-1.10.1.js"></script>
 <script type="text/javascript">
 
+  //jQuery的本质
+  //本质上就是自定义的函数，在函数里面会给window绑定一个$对象，这个对象
+  //的地址指向了jQuery function
+  (function (window) {
+        var jQuery = function () {
+                return new xxx()
+        }
+        window.$ = window.jQuery = jQuery()
+  })(window)
+
   console.log(typeof $)   //$是一个function
   console.log($ === jQuery) //true  $与jQuery等同
   console.log($ === window.$) //true  $是一个全局函数

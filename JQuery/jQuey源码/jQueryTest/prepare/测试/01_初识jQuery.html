@@ -23,13 +23,21 @@
       * 远程引入
     2. 使用jQuery函数和jQuery对象编码
   -->
-  <script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+  <!--<script type="text/javascript" src="js/jquery-1.10.1.js"></script>-->
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
   <script type="text/javascript">
-    $(function () {
-      $('#btn2').click(function  () {
-        alert($('#username').val())
-      })
-    })
+  $(function () {
+      $('#btn2').click(function () {// 给btn2绑定一个监听
+              var username = $('#username').val();
+              alert(username);
+      });
+  });
+
+  /*
+  使用jquery核心函数：$/jQuery
+  使用jQuery核心对象L执行$()返回的对象
+   */
+
   </script>
 </head>
 <body>
