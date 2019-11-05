@@ -26,10 +26,10 @@
   //本质上就是自定义的函数，在函数里面会给window绑定一个$对象，这个对象
   //的地址指向了jQuery function
   (function (window) {
-        var jQuery = function () {
-                return new xxx()
-        }
-        window.$ = window.jQuery = jQuery()
+    var jQuery = function () {
+      return new xxx()
+    }
+    window.$ = window.jQuery = jQuery()
   })(window)
 
   console.log(typeof $)   //$是一个function
