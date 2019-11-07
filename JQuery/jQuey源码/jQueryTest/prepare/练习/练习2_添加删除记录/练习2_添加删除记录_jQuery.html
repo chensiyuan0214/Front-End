@@ -105,7 +105,7 @@
         .append('<td>'+email+'</td>')
         .append('<td>'+salary+'</td>')
         .append('<td><a href="deleteEmp?id="'+id+'>Delete</a></td>')
-        .appendTo('#employeeTable')
+        .appendTo('#employeeTable>tbody')
         .find('a')
         .click(clickA)
 

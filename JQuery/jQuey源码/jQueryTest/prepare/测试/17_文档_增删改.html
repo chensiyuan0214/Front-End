@@ -84,22 +84,22 @@
    */
   $(function () {
 //1. 向id为ul1的ul下添加一个span(最后)
-    $('#ul1').append('<span>append()添加的span</span>')
+     $('#ul1').append('<span>append()添加的span</span>')
     $('<span>appendTo()添加的span</span>').appendTo('#ul1')
 //2. 向id为ul1的ul下添加一个span(最前)
-    $('#ul1').prepend('<span>prepend()添加的span</span>')
+     $('#ul1').prepend('<span>prepend()添加的span</span>')
     $('<span>prependTo()添加的span</span>').prependTo('#ul1')
 
 //3. 在id为ul1的ul下的li(title为hello)的前面添加span
-    $('#ul1>li[title=hello]').before('<span>before()添加的span</span>')
+     $('#ul1>li[title=hello]').before('<span>before()添加的span</span>')
 
-//4. 在id为ul1的ul下的li(title为hello)的后面添加span
-    $('#ul1>li[title=hello]').after('<span>after()添加的span</span>')
-//5. 将在id为ul2的ul下的li(title为hello)全部替换为p
+ //4. 在id为ul1的ul下的li(title为hello)的后面添加span
+     $('#ul1>li[title=hello]').after('<span>after()添加的span</span>')
+ //5. 将在id为ul2的ul下的li(title为hello)全部替换为p
     $('#ul1>li[title=hello]').replaceWith('<p>replaceWith()替换的p</p>')
-//6. 移除id为ul2的ul下的所有li
-    $('#ul2').empty()
-
+ //6. 移除id为ul2的ul下的所有li
+     //$('#ul2').empty() //这个会连带span也删掉
+      $('#ul2>li').remove();
   });
 </script>
 </body>
